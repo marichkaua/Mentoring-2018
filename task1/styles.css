@@ -1,0 +1,184 @@
+body {
+    background-color: rgb(45, 50, 54);
+    font-family: 'Glyphicons Halflings', 'Verdana';
+    margin: 0;
+    color: black;
+}
+nav {
+    height: 25px;
+    margin: 10px;
+    padding: 10px;
+}
+.main {
+    background-color: white;
+    font-size: 7.5px;
+}
+button {
+    border: none;
+    padding: 8px 20px;
+    margin: auto;
+    display: block;
+    color: white;
+    font-size: 9px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+figure {
+    background-color: whitesmoke;
+    object-fit: contain;
+    margin: 20px 10px;
+}
+#row1 figure {
+    max-width: 200px;
+}
+#row2 figure {
+    max-width: 300px;
+}
+#row1 figure img {
+    max-width: 200px;
+    max-height: 100px;
+}
+#row2 figure img {
+    max-width: 300px;
+    max-height: 150px;
+}
+#row1, #row2 {
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+#row2 {
+    align-items: flex-start;
+}
+#row2 figure figcaption h3 {
+    text-align: center;
+}
+#row2 figure button {
+    float: right;
+    margin-right: 10%;
+    background-color: whitesmoke;
+}
+.main div figure figcaption {
+    padding: 0px 10px;
+}
+#row2 figure figcaption h3{
+    text-align: cetner;
+    justify-content: center;
+}
+#row2 figure button {
+    text-align: right;
+    justify-content: right;
+    color:black;
+    border: 0.5px grey solid;
+}
+/* .main div figure {
+    width: 300px;
+    height: 200px;
+    display: inline-block;
+}
+/* .main div:nth-child(4), .main div:nth-child(5) {
+    flex: 0 0 600px;
+    height: 490px;
+}
+.main div:nth-child(4){
+    display: flex;
+    flex: 0 0 600px;
+    height: 490px;
+}
+*/
+
+.main figure:nth-of-type(1) button {
+    background: blue;
+}
+
+.blue button {
+    background-color: #0080ff;
+} 
+.blue h3 {
+    color: #0080ff;
+}
+.red button {
+    background-color: darkred;
+}
+.red h3 {
+    color: darkred;
+}
+.green button {
+    background-color: green;
+}
+.green h3 {
+    color: green;
+}
+
+.navigation ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-flow: row wrap;
+    margin: 0px;
+    padding: 5px;
+}
+li a {
+    text-decoration: none;
+    color: white;
+    border: 0.5px solid grey;
+    width: 8px;
+    height: 4px;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+    font-size: 10px;
+}
+li a:hover {
+    background-color: darkslategrey;
+}
+#banner {
+    background-image: url('./img/bg-1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-flow: column wrap;
+    color: white;
+}
+#banner h1{
+    text-shadow: 2px 2px 4px #000000;
+}
+#banner h1, h5 {
+    margin: 0px;
+    font-weight: normal;
+}
+#foot {
+    background-image: url('./img/bg-2.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    height: 170px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-flow: column wrap;
+    color: white;
+    font-size: 11px;
+}
+footer {
+    height: 20px;
+    width: 100%;
+    background-color: white;
+    text-align: right;
+    padding-left: 5px;
+}
+.fa-chevron-circle-up {
+    color: rgb(45, 50, 54);
+}
+#foot a i {
+    position: fixed;
+    right: 10px;
+    bottom: 15px;
+}

@@ -1,23 +1,26 @@
 // 1 
-let num = 1;
-console.log(-num);
+function myF(num) {
+    return (-num);
+}
 
 // 2
-var string = "12345";
-var result1 = string.substring(1, string.length - 1);
-var result2 = string.slice(1, -1);
-console.log(result1, result2);
+function stringCut(string) {
+    return string.substring(1, string.length - 1);
+    // return string.slice(1, -1);
+}
 
 //3.1 case sensitive
 var myStringA = "dddEnglishsccc";
 console.log(myStringA.includes("English"));
 
 // 3.2
-let myStringB = "dddEnglishsccc";
-let searchedItemB = "English";
-let foundItem = myStringB.toLowerCase()
-    .includes(searchedItemB.toLowerCase());
-console.log(foundItem);
+function stringContains(myStringB) {
+    let searchedItemB = "English";
+    let foundItem = myStringB
+        .toLowerCase()
+        .includes(searchedItemB.toLowerCase());
+    return foundItem;
+}
 
 // 3.3
 let myStringC = "dddEnglishsccc";
@@ -27,7 +30,7 @@ console.log(foundC);
 // 3.4 
 // QUESTION - why false?
 let myStringD = "dddEnglishsccc";
-let foundD = myStringD.match(/english/i) >= 0;
+let foundD = myStringD.match(/english/i).length >= 0;
 console.log(foundD);
 
 // 3.5
@@ -36,27 +39,42 @@ let searchedItemE = "english";
 let foundE = myStringE.toLowerCase().indexOf(searchedItemE.toLowerCase()) >= 0;
 console.log(foundE);
 
-/* QUESTIONS: 
-var result= string.search(new RegExp(searchstring, "i")); -what is RegExp?
+// 3.4.1
+var today = new Date();
+var myYear = prompt("What year were you born in?");
+var birthday = new Date(myYear);
+var yearsNow = today.getFullYear() - birthday.getFullYear();
+console.log("You are " + yearsNow + " year(s) old.");
 
-const raitings = [1,2,3,4,5,4,3,2,1];
-console.log (raitings.indexOf(3))
--1 */
+// 3.4.2
+function calculate_age(dob, yearCurrent) {
+    var birth = dob.getFullYear();
+    var curr = yearCurrent.getFullYear();
+    var futureAge = birth - curr;
+    var pastAge = curr - birth;
+    if (curr == birth) {
+        return "You were born this very year!";
+    } else if (curr < birth) {
+        return "You will be born in " + futureAge + isOdd(futureAge);
+    } else {
+        return "You are " + pastAge + isOdd(pastAge) + " old.";
+    }
 
-// 4 to be added
+    function isOdd(year) {
+        if ((year % 2) == 1) {
+            return " year";
+        } else {
+            return " years"
+        }
+    }
+}
+console.log(calculate_age(new Date(2000, 06, 11), new Date(2025, 06, 11)));
 
 // 5
-let array1 = [1, 2, 3];
-let array2 = [3, 2, 1];
-let arrayNew = [];
-for (var i = 0; i < array1.length; i++) {
-    arrayNew.push(array1[i] + array2[i]);
-    console.log(arrayNew);
-};
-
-/*
- var sum = array1.map(function (num, idx) {
-    return num + array2[idx];
-  }); // [6,8,10,12]
-
-  */
+function arraysSum(array1, array2) {
+    let arrayNew = [];
+    for (var i = 0; i < array1.length; i++) {
+        arrayNew.push(array1[i] + array2[i]);
+    };
+    return arrayNew;
+}
